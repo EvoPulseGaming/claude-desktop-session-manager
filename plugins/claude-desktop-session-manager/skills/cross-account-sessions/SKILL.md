@@ -1,5 +1,5 @@
 ---
-name: consolidate-sessions
+name: cross-account-sessions
 description: Use this skill when the user wants to consolidate, merge, or combine their Claude Desktop / Claude Code sessions across multiple accounts, or reports that sessions from another account are missing or not showing, or that switching accounts hides their sessions (e.g. "merge my Claude sessions across accounts", "my other account's sessions aren't showing up", "I switched accounts and my sessions are gone", "combine session lists from both my logins").
 version: 0.1.0
 ---
@@ -36,4 +36,4 @@ Tell the user to FULLY restart Claude Desktop (quit completely, including any tr
 
 Do NOT use the script's `-RestartDesktop` flag from within this session — it kills all claude.exe processes and would terminate the running Claude Desktop session. Ask the user to restart the app manually.
 
-The `/consolidate-sessions` slash command wraps this same flow (`/consolidate-sessions` for preview, `run` to copy, `move` to move).
+The `/claude-desktop-session-manager:consolidate` slash command wraps this same flow (`/claude-desktop-session-manager:consolidate` for preview, `run` to copy, `move` to move).

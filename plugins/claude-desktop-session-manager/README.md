@@ -30,13 +30,18 @@ Or from a local clone — point the marketplace at the repo's root folder (the o
 ## How to invoke
 
 **GUI (Session Manager):**
-- `/session-manager` — opens a native window listing every session across all accounts with checkboxes, an account filter, a copy/move **target** picker, and **Copy / Move / Remove** buttons. You can also double-click `Claude Session Manager.cmd` on the Desktop, or run `scripts/Session-Manager.ps1` directly (`powershell -STA -ExecutionPolicy Bypass -File ...`).
-  - **Copy / Move** use newest-wins. **Remove** deletes only the list entry (the shared transcript is kept). A timestamped backup is taken before the first change.
+- `/claude-desktop-session-manager:gui` — opens a native window listing every session across all accounts **and all isolated instances** with checkboxes, an instance/account filter, a copy/move **target** picker, and **Copy / Move / Remove** buttons. You can also run `scripts/Session-Manager.ps1` directly outside Claude (`powershell -STA -ExecutionPolicy Bypass -File ...`).
+  - **Copy / Move** use newest-wins and work between any instance/account pair. **Remove** deletes only the list entry (the shared transcript is kept). A timestamped backup of every store is taken before the first change.
+
+**Instances (run multiple Claude Desktops, each on its own account):**
+- `/claude-desktop-session-manager:instance` — list instances (main + every profile under `%USERPROFILE%\ClaudeInstances\`), whether each is running, and its session count.
+- `/claude-desktop-session-manager:instance <name>` — launch that instance, creating it on first use (a fresh login screen appears — sign into whichever account it should hold). Claude Desktop honors `--user-data-dir`, so each instance is fully isolated: own login, config, MCP servers, and session store. The GUI sees them all.
+  - Caveat: `claude://` login deep-links go to the most recently registered instance — if a browser login lands in the wrong window, close the other instance during that login.
 
 **Scripted (no GUI):**
-- `/consolidate-sessions` — **preview only** (default). Lists accounts and session counts, dry-runs the merge, and shows what would change. Makes no changes; asks you to confirm.
-- `/consolidate-sessions run` — perform the real migration by **copying** (keeps a timestamped backup).
-- `/consolidate-sessions move` — perform the real migration by **moving** files out of the other accounts.
+- `/claude-desktop-session-manager:consolidate` — **preview only** (default). Lists accounts and session counts, dry-runs the merge, and shows what would change. Makes no changes; asks you to confirm.
+- `/claude-desktop-session-manager:consolidate run` — perform the real migration by **copying** (keeps a timestamped backup).
+- `/claude-desktop-session-manager:consolidate move` — perform the real migration by **moving** files out of the other accounts.
 
 You can also just ask in natural language, e.g. "merge my Claude sessions across accounts" or "my other account's sessions aren't showing up" — the bundled skill triggers the same flow.
 
@@ -54,14 +59,16 @@ After a real migration, **fully restart Claude Desktop** (quit completely, inclu
 ## Layout
 
 ```
-claude-desktop-session-manager/                     <- add THIS folder as a marketplace
+claude-desktop-session-manager/          <- add THIS folder as a marketplace
   .claude-plugin/marketplace.json
   plugins/claude-desktop-session-manager/           <- the plugin (CLAUDE_PLUGIN_ROOT)
     .claude-plugin/plugin.json
-    commands/consolidate-sessions.md
-    commands/session-manager.md
-    skills/consolidate-sessions/SKILL.md
+    commands/consolidate.md
+    commands/gui.md
+    commands/instance.md
+    skills/cross-account-sessions/SKILL.md
     scripts/Consolidate-ClaudeSessions.ps1
     scripts/Session-Manager.ps1
+    scripts/Claude-Instances.ps1
     README.md
 ```

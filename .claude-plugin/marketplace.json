@@ -3,15 +3,15 @@
   "owner": {
     "name": "Sascha Elble"
   },
-  "description": "Claude Desktop Session Manager - manage and consolidate Claude Desktop 'Claude Code' session lists across signed-in accounts.",
+  "description": "Claude Desktop Session Manager - manage and consolidate Claude Desktop 'Claude Code' session lists across signed-in accounts and isolated instances.",
   "homepage": "https://github.com/EvoPulseGaming/claude-desktop-session-manager",
   "repository": "https://github.com/EvoPulseGaming/claude-desktop-session-manager",
   "plugins": [
     {
       "name": "claude-desktop-session-manager",
       "source": "./plugins/claude-desktop-session-manager",
-      "description": "Claude Desktop Session Manager - manage and consolidate Claude Desktop 'Claude Code' session lists across signed-in accounts (GUI session manager + consolidate command).",
-      "version": "0.2.0"
+      "description": "Claude Desktop Session Manager - manage and consolidate Claude Desktop 'Claude Code' session lists across signed-in accounts and isolated instances (GUI session manager + consolidate command + instance launcher).",
+      "version": "0.5.0"
     }
   ]
 }

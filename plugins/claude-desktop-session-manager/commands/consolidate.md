@@ -33,8 +33,8 @@ Parse `$ARGUMENTS` (trim whitespace, lowercase):
   2. Then run the script with `-DryRun` and show exactly what WOULD be copied.
   3. Summarize for the user: which account is current, how many session files from other accounts would be merged in, and that nothing has changed yet.
   4. STOP and ask the user to confirm. Tell them explicitly:
-     - Reply / run `/consolidate-sessions run` to perform the real migration (safe COPY, keeps a timestamped backup).
-     - Or `/consolidate-sessions move` to MOVE the files instead of copying (removes them from the other accounts).
+     - Reply / run `/claude-desktop-session-manager:consolidate run` to perform the real migration (safe COPY, keeps a timestamped backup).
+     - Or `/claude-desktop-session-manager:consolidate move` to MOVE the files instead of copying (removes them from the other accounts).
   Do NOT run the real migration in this default mode under any circumstance.
 
 - **`run` (perform the real migration, COPY):**

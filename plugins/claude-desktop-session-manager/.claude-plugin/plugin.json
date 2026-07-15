@@ -1,12 +1,12 @@
 {
   "name": "claude-desktop-session-manager",
-  "version": "0.2.0",
-  "description": "Claude Desktop Session Manager - manage and consolidate Claude Desktop 'Claude Code' session lists across signed-in accounts: a GUI session manager plus a consolidate command, so sessions from every account appear in one place.",
+  "version": "0.5.0",
+  "description": "Claude Desktop Session Manager - manage and consolidate Claude Desktop 'Claude Code' session lists across signed-in accounts and isolated instances: a GUI session manager, a consolidate command, and an instance launcher, so sessions from every account appear in one place.",
   "author": {
     "name": "Sascha Elble"
   },
   "homepage": "https://github.com/EvoPulseGaming/claude-desktop-session-manager",
   "repository": "https://github.com/EvoPulseGaming/claude-desktop-session-manager",
   "license": "Unlicense",
-  "keywords": ["claude-desktop", "sessions", "accounts", "consolidate", "merge", "session-manager", "windows"]
+  "keywords": ["claude-desktop", "sessions", "accounts", "consolidate", "merge", "session-manager", "instances", "windows"]
 }
