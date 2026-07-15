@@ -1,8 +1,8 @@
 # Claude Desktop Session Manager
 
-A Claude Code plugin marketplace for managing **Claude Desktop "Claude Code" sessions across multiple signed-in accounts and isolated instances** on Windows.
+A Claude Code plugin for Windows that puts **every Claude Desktop "Claude Code" session — from every signed-in account and every isolated instance — into one list**, where you can copy, move, or remove them. It can also **launch additional, fully isolated Claude Desktop instances**, so you can run several accounts side by side and shuttle sessions between them.
 
-Claude Desktop stores each account's session list separately and only shows the account you're currently logged in as — so sessions created under another account seem to vanish when you switch. This plugin fixes that.
+Claude Desktop normally hides all of this from you: each account's session list is stored separately and only the currently logged-in account's list is shown — so sessions created under another account seem to vanish when you switch — and the app only runs one instance (one account) at a time. This plugin fixes both.
 
 ## Features
 

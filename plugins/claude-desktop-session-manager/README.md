@@ -1,10 +1,12 @@
 # Claude Desktop Session Manager
 
-Consolidate your Claude Desktop **Claude Code** session lists across multiple signed-in accounts, from inside Claude.
+See and manage every Claude Desktop **Claude Code** session across all your signed-in accounts and isolated instances — and run multiple Claude Desktops side by side — from inside Claude.
 
 ## What it does
 
 Claude Desktop stores each account's session list separately on disk and only shows the account you're currently logged in as, so sessions created under another account appear to vanish when you switch. This plugin runs a bundled, validated PowerShell script that copies every OTHER account's session files into your current account's active workspace, so they all appear in one list. The actual transcripts live under `%USERPROFILE%\.claude\projects` and are not account-scoped, so merged sessions stay fully resumable.
+
+It also works around Claude Desktop's one-instance-at-a-time limit: an instance launcher starts extra, fully isolated Claude Desktops (each with its own login, config, MCP servers, and session store), and the bundled GUI sees every session across all of them, with copy / move / remove between any account or instance.
 
 Windows + Claude Desktop (MSIX) only.
 
